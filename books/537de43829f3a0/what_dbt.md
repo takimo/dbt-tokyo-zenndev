@@ -22,6 +22,10 @@ ELTの概念や隣接する議論のモダンデータスタックに関して�
 👱🏽‍♀️「このクエリはAのviewを参照していて、AのviewはBを参照していて、BのviewはCとDとEを参照していて、CはFとGを参照していて、Dは…」
 👱🏻‍♂️「どこに影響あるかな…？」
 
+:::message
+この本はdbtの日本での普及を目的にdbt本家の[チュートリアル](https://docs.getdbt.com/tutorial/setting-up)や[ドキュメント](https://docs.getdbt.com/docs/introduction)を元に翻訳＆分かりやすくするためにコンテンツの追加＆再構成させたものです
+::
+
 # dbtの何が良いのか？
 - SELECTのSQLを書くだけで良く、SQLの知識があればパイプラインを構築できる
 - SQLで定義したモデルはrefと呼ばれるテーブル間の関係性を自動的に把握できるようになる仕組みで記述することで、DAG（有向非巡回グラフ）を考慮したデプロイを実行できるため、モデルを反映させるための細かなワークフローを組む必要がない
@@ -59,11 +63,63 @@ left join {{ ref('base_payments') }} as payments on payments.order_id = orders.i
 # dbtで他に何ができるのか
 
 ## テンプレートエンジンのJinjaを使った高度なクエリ処理
+dbtではSQL内に軽量なテンプレート言語であるJinjaを使うことが出来ます。SQLにJinjaを使うことで制御構文（ifやforなど）を使用することが出来る用になります。またマクロ機能で他のdbtユーザーが作った処理を利用したりすることも可能です。
+
+```
+select
+order_id,
+{% for payment_method in ["bank_transfer", "credit_card", "gift_card"] %}
+sum(case when payment_method = '{{payment_method}}' then amount end) as {{payment_method}}_amount,
+{% endfor %}
+sum(amount) as total_amount
+from {{ ref('raw_payments') }}
+group by 1
+```
+
+「Jinjaを使った高度なモデリング処理（後ほど公開）」で詳しくご紹介します。
 
 ## テスト
+モデルによって生成された結果にアサーションを行うことで、各モデルのSQLの整合性を向上させる方法を提供します。モデル内の指定された列にのみ、以下のものが含まれているかどうかをテストをYAMLで定義するだけで実行することができます。
+
+- `not null`：nullが含まれていないか
+- `unique`：ユニークな値になっているか
+- `relashonship`：別のモデルで対応する値を持っているか（Ordersモデルのcustomer_idはCustomersモデルのidとして存在しているか）
+- `accepted_values`：指定したリストの中にある値か
+
+```
+version: 2
+
+models:
+  - name: orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['placed', 'shipped', 'completed', 'returned']
+      - name: customer_id
+        tests:
+          - relationships:
+              to: ref('customers')
+              field: id
+```
+
+またテストは、組織に特有のビジネスロジックに合わせて簡単に拡張することができます。セレクトクエリの形式でモデルに対して行うことができるアサーションは、すべてテストに変えることができます。
+
+詳しくは「[テストとドキュメント]()」で詳しくご紹介します。
 
 ## ドキュメンテーション
+dbtではdbtモデルのドキュメントを書き、バージョン管理し、共有する仕組みを提供しています。それぞれのモデルやフィールドに対して、説明文（テキスト、またはマークダウン）を書くことができます。
+
+これらの説明は、追加の暗黙的な情報（例えば、モデルのリネージ、フィールドのデータタイプや適用されたテストなど）とともに、ウェブサイトとして作成され、チーム内で共有することができます。これにより、dbtモデルを使用する誰もが簡単に参照できるドキュメントをを提供することができます。
+
+詳しくは「[テストとドキュメント]()」で詳しくご紹介します。
 
 ## 他にも。。
 - パケッケージマネージメント
 - データスナップショット
+
+などありますが、より詳しいドキュメントは本家の[ドキュメント](https://docs.getdbt.com/docs/building-a-dbt-project/projects)を参考に頂くか、今後拡張していく予定です。
