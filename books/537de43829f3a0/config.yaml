@@ -15,7 +15,7 @@ summary: "事業会社においてBIやレポート用の分析を担当して�
 ※自分がBigQueryを中心に利用しているので記事自体はそれを前提に構成してあります、SnowflakeやAmazon Redshift等の様々な分析基盤でもdbtは対応可能です
 "
 topics: ["bigquery","dbt"]
-published: false
+published: true
 price: 0 # 有料の場合200〜5000
 # 本に含めるチャプターを順番に並べましょう
 chapters:
