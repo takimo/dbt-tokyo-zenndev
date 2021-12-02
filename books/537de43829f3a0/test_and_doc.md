@@ -53,7 +53,7 @@ models:
 このスキーマテストは自分で拡張することも可能で、[dbt-utils package](https://github.com/dbt-labs/dbt-utils/tree/0.2.4/#schema-tests)といった外部のパッケージ化されたものを使用することも可能です。
 詳しくは「テストのドキュメント（後日公開）」を参照してください
 
-```yaml
+```yaml:schema.yml
 version: 2
 
 models:
