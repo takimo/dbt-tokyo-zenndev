@@ -24,7 +24,7 @@ ELTの概念や隣接する議論のモダンデータスタックに関して�
 
 :::message
 この本はdbtの日本での普及を目的にdbt本家の[チュートリアル](https://docs.getdbt.com/tutorial/setting-up)や[ドキュメント](https://docs.getdbt.com/docs/introduction)を元に翻訳＆分かりやすくするためにコンテンツの追加＆再構成させたものです
-::
+:::
 
 # dbtの何が良いのか？
 - SELECTのSQLを書くだけで良く、SQLの知識があればパイプラインを構築できる
