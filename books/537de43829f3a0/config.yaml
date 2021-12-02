@@ -25,3 +25,4 @@ chapters:
   - test_and_doc
   - deploy
   - jinja_modeling
+  - dbt_tokyo
