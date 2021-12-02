@@ -51,3 +51,58 @@ sum(amount) as total_amount
 from {{ ref('raw_payments') }}
 group by 1
 ```
+
+# loop.lastを使って最後にカンマが来るのを避ける
+上記のクエリでは、最後のカラムがforループの外にありますが、ループの最後の繰り返しが最後のカラムの場合、最後にコンマがないことを確認する必要があります（最新のBigQueryはカンマがあっても動きますが）
+
+そこで、if文とJinja変数loop.lastを使って、余計なカンマを入れないようにします。
+
+```sql:/models/order_payment_method_amounts.sql
+{% set payment_methods = ["bank_transfer", "credit_card", "gift_card"] %}
+
+select
+order_id,
+{% for payment_method in payment_methods %}
+sum(case when payment_method = '{{payment_method}}' then amount end) as {{payment_method}}_amount
+{% if not loop.last %},{% endif %}
+{% endfor %}
+from {{ ref('raw_payments') }}
+group by 1
+
+```
+
+# 
+ここでは、支払い方法のリストをモデルにハードコードしています。他のモデルからこのリストにアクセスする必要があるかもしれません。ここでの良い解決策は、変数を使用することですが、このチュートリアルの目的のために、代わりにマクロを使用することにします。
+
+Jinjaのマクロは、複数回呼び出すことができるコードです。Pythonの関数に似ており、複数のモデルでコードを繰り返すような場合に非常に便利です。
+
+このマクロは、単に支払い方法のリストを返すだけです。
+
+```sql:/macros/get_payment_methods.sql
+{% macro get_payment_methods() %}
+{{ return(["bank_transfer", "credit_card", "gift_card"]) }}
+{% endmacro %}
+```
+
+ここでは、いくつか注意すべき点があります。
+
+- 通常、マクロは引数を取ります。後ほど説明しますが、今のところ、通常は引数を取るところを空の括弧で囲んで、マクロを記述する必要があります。プログラムの関数呼び出しと同等です（例：get_payment_methods()
+- return関数を使用してリストを返しています。この関数がない場合、マクロは文字列を返します。
+これで支払い方法のマクロができたので、次のようにモデルを更新します。
+
+```sql:models/order_payment_method_amounts.sql
+{%- set payment_methods = get_payment_methods() -%}
+
+select
+order_id,
+{%- for payment_method in payment_methods %}
+sum(case when payment_method = '{{payment_method}}' then amount end) as {{payment_method}}_amount
+{%- if not loop.last %},{% endif -%}
+{% endfor %}
+from {{ ref('raw_payments') }}
+group by 1
+```
+
+:::message
+マクロを呼び出すときに中括弧を使っていないことに注意してください。すでにJinjaのステートメントの中にいるので、再び中括弧を使う必要はありません。
+:::
