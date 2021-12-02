@@ -120,17 +120,11 @@ dbtはref関数を以下のように使用します
 **モデル自体の定義**
 ```sql:models/customers.sql
 with customers as (
-
     select * from {{ ref('stg_customers') }}
-
 ),
-
 orders as (
-
     select * from {{ ref('stg_orders') }}
-
 ),
-
 ...
 
 ```
@@ -138,22 +132,14 @@ orders as (
 ```sql
 create view dbt_alice.customers as (
   with customers as (
-
       select * from dbt_alice.stg_customers
-
   ),
-
   orders as (
-
       select * from dbt_alice.stg_orders
-
   ),
-
   ...
 )
-
 ...
-
 
 ```
 
@@ -161,19 +147,12 @@ create view dbt_alice.customers as (
 ```sql
 create view analytics.customers as (
   with customers as (
-
       select * from analytics.stg_customers
-
   ),
-
   orders as (
-
       select * from analytics.stg_orders
-
   ),
-
   ...
 )
-
 ...
 ```
