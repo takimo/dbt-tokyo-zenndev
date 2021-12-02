@@ -65,7 +65,7 @@ left join {{ ref('base_payments') }} as payments on payments.order_id = orders.i
 ## テンプレートエンジンのJinjaを使った高度なクエリ処理
 dbtではSQL内に軽量なテンプレート言語であるJinjaを使うことが出来ます。SQLにJinjaを使うことで制御構文（ifやforなど）を使用することが出来る用になります。またマクロ機能で他のdbtユーザーが作った処理を利用したりすることも可能です。
 
-```
+```sql
 select
 order_id,
 {% for payment_method in ["bank_transfer", "credit_card", "gift_card"] %}
@@ -86,7 +86,7 @@ group by 1
 - `relashonship`：別のモデルで対応する値を持っているか（Ordersモデルのcustomer_idはCustomersモデルのidとして存在しているか）
 - `accepted_values`：指定したリストの中にある値か
 
-```
+```yaml
 version: 2
 
 models:
