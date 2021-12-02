@@ -15,7 +15,7 @@ dbtで呼ばれるモデルとはselect文のことです。モデルは.sqlフ�
 
 例えば次のcustomersモデルを考えてみましょう。
 
-```models/customers.sql
+```sql:models/customers.sql
 with customer_orders as (
     select
         customer_id,
@@ -43,7 +43,7 @@ left join customer_orders using (customer_id)
 
 上記のモデルを`dbt run`すると`customers`というviewテーブルが指定されたスキーマ（データセット、以下の例だと`dbt_alice`）に作成されます。
 
-```
+```sql
 create view dbt_alice.customers as (
     with customer_orders as (
         select
@@ -75,7 +75,7 @@ create view dbt_alice.customers as (
 モデルは`dbt_project.yml`や各モデルの`configブロック`で設定することが出来ます。
 どのような設定が出来るのか例として以下のようなものがあります。
 
-- モデルが使用する`Materialization`を変更する（マテリアアライゼーションはdbtがウェアハウスにモデルを作成する際に使用するSQLを決定するものになります）
+- モデルが使用する`materialization`を変更する（マテリアアライゼーションはdbtがウェアハウスにモデルを作成する際に使用するSQLを決定するものになります）
   - ※[BigQueryのマテリアライズドView](https://cloud.google.com/blog/ja/products/data-analytics/bigquery-materialized-views-now-ga)のことではなく、dbt内での表現です
 - モデルを別のスキーマに構築する
 - モデルにタグを適用する
