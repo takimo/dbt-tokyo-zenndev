@@ -1,6 +1,6 @@
 [BigQueryとdbt Cloudで始めるデータパイプライン入門](https://zenn.dev/dbt_tokyo/books/537de43829f3a0)というdbt-tokyoで管理するdbtのドキュメントを管理するレポジトリです
 
-![](https://gyazo.com/e6f83bbcf59e8df603a32f1ae43318bf)
+![](https://i.gyazo.com/e6f83bbcf59e8df603a32f1ae43318bf.png)
 
 # このプロジェクトの目的
 - 日本のdbt普及のため日本語で分かりやすく体系化されたドキュメント群を提供し、始める人や断片的に理解している方がよりdbtの魅力や新しい発見が出来るようになることを目的とします
