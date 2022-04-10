@@ -1,4 +1,4 @@
-[BigQueryとdbt Cloudで始めるデータパイプライン入門](https://zenn.dev/dbt_tokyo/books/537de43829f3a0)というdbt-tokyoで管理するdbtのドキュメントを管理するレポジトリです
+[dbt Cloudで始めるデータパイプライン構築のdbt入門](https://zenn.dev/dbt_tokyo/books/537de43829f3a0)というdbt-tokyoで管理するdbtのドキュメントを管理するレポジトリです
 
 <img src="https://i.gyazo.com/e6f83bbcf59e8df603a32f1ae43318bf.png" width="400">
 

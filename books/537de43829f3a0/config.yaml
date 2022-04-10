@@ -1,4 +1,4 @@
-title: "BigQueryとdbt Cloudで始めるデータパイプライン入門"
+title: "dbt Cloudで始めるデータパイプライン構築のdbt入門"
 summary: "事業会社においてBIやレポート用の分析を担当しているが以下のような状況に該当する人に向けたデータパイプライン構築の入門のための資料です
 
 
@@ -12,7 +12,7 @@ summary: "事業会社においてBIやレポート用の分析を担当して�
 　
 
 
-※自分がBigQueryを中心に利用しているので記事自体はそれを前提に構成してあります、SnowflakeやAmazon Redshift等の様々な分析基盤でもdbtは対応可能です
+※現時点ではBigQueryを中心に記事を構成してあります、SnowflakeやAmazon Redshift等の様々な分析基盤でもdbtは対応可能です
 "
 topics: ["bigquery","dbt"]
 published: true
