@@ -27,4 +27,5 @@ chapters:
   - jinja_modeling
   - models_doc
   - materializations_doc
+  - legacy_refactoring
   - dbt_tokyo
