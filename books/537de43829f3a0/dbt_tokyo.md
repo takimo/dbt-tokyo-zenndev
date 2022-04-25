@@ -1,8 +1,8 @@
 ---
 title: 'dbt Japan User Groupの紹介と執筆者'
 ---
-# dbt Japn User Gropとは？
-dbt Japn User Gropではdbtを東京をはじめ、日本におけるdbtの普及と、dbtプロダクトへの貢献を目的に活動をしています。
+# dbt Japan User Gropとは？
+dbt Japan User Gropではdbtを東京をはじめ、日本におけるdbtの普及と、dbtプロダクトへの貢献を目的に活動をしています。
 Slackの日本語コミュニティもあり、dbtユーザーの方で困ったこと相談や最新の情報等の共有等しているので、よかったらご参加ください。
 https://dbt-ug.tokyo/
 
