@@ -143,7 +143,7 @@ create view dbt_alice.customers as (
 
 ```
 
-**ターゲットが「prodction」で、そこに紐づくターゲットスキーマが「dbt_alice」の場合**
+**ターゲットが「prodction」で、そこに紐づくターゲットスキーマが「analytics」の場合**
 ```sql
 create view analytics.customers as (
   with customers as (
