@@ -390,7 +390,7 @@ id,order_id,payment_method,amount
 
 ![](https://storage.googleapis.com/zenn-user-upload/19194458a555-20211201.png)
 
-3つCSVファイルを/dataに作成すると以下のようなデータになっていればOKです。
+3つCSVファイルを/seedsに作成すると以下のようなデータになっていればOKです。
 
 ![](https://storage.googleapis.com/zenn-user-upload/d0a47667814c-20211201.png)
 
