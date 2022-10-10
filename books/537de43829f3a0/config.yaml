@@ -28,4 +28,5 @@ chapters:
   - models_doc
   - materializations_doc
   - legacy_refactoring
+  - python_library
   - dbt_tokyo
