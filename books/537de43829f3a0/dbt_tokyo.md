@@ -11,5 +11,6 @@ https://dbt-ug.tokyo/
 https://dbt-tokyo.connpass.com/
 
 # このコンテンツの執筆＆貢献者
-- [@takimo](https://twitter.com/takimo): 株式会社10X所属、dbt tokyoのコミュニティオーガナイザー
+- [takimo](https://twitter.com/takimo): 株式会社10X所属、dbt tokyoのコミュニティオーガナイザー
+- [Ken](https://twitter.com/diggy__k): 株式会社マネーフォワード
 順不同
