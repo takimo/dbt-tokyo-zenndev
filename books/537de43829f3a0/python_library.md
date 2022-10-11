@@ -3,7 +3,7 @@ title: 'dbt向けPythonライブラリのご紹介'
 ---
 written by: [Ken](https://twitter.com/diggy__k)
 
-昨今、dbt向けの便利なPythonライブラリが数多く開発されていますが、それらを探し当てることはなかなか大変ですよね。そこでBI, DataOps, Transformationの3カテゴリーに分けてご紹介したいと思います。
+昨今、dbt向けの便利なPythonライブラリが数多く開発されていますが、それらを探し当てることはなかなか大変ですよね。そこでBI, DataOps, Doc/Test, Transformationの4カテゴリーに分けてご紹介したいと思います。
 
 ## BI
 | ツール名 | 概要 |
