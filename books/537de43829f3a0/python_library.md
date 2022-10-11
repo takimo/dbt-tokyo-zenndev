@@ -54,5 +54,6 @@ written by: [Ken](https://twitter.com/diggy__k)
 | [dbt-coves](https://github.com/datacoves/dbt-coves) | Redshift、Snowflake、BigQueryのスキーマを解析し、必要なファイル（sql、yml）を自動生成してくれる。Airbyteとの連携も。 |
 | [dbt-ml-preprocessing](https://github.com/omnata-labs/dbt-ml-preprocessing) | SparkのmllibやPythonのscikit-learnのような外部ライブラリを使わずに、データウェアハウス内にFeature Storeを構築する。 |
 | [dbt-feature-store](https://github.com/fal-ai/dbt_feature_store) | dbtプロジェクト内でFeature Storeを構築するためのマクロ。 |
+
 今回ご紹介するものは以上です。気になるものがありましたら、ぜひ試してみてくださいね。
 また「ここに載っていないけれど、こんなのもあるよ！」というものがありましたら、ぜひdbt-tokyoの `#local-tokyo` チャンネルで教えてください！
