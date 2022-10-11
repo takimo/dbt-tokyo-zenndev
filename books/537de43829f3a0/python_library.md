@@ -41,7 +41,6 @@ written by: [Ken](https://twitter.com/diggy__k)
 | [dbt-sugar](https://github.com/bitpicky/dbt-sugar) | カラムやモデルのドキュメント追加、テストカバレッジやタグの強制といったタスクをCLIから直接実行できるようにするツール。 |
 | [Demeter](https://github.com/mjirv/demeter) | REST API（GraphQLエンドポイントを含む）を提供し、dbtのMetricsにクエリを投げることができる。 |
 | [dbt-invoke](https://github.com/Dashlane/dbt-invoke) | dbtのYAMLファイルを作成、更新、削除してくれるCLI。 |
-| [dbt-datamocktool](https://github.com/mjirv/dbt-datamocktool) | モデルが使用するsourcesやrefの代わりとなるモックCSV seedsを生成し、モデルが望ましい出力を生成することをテストできる。 |
 | [dbt-yaml-check](https://github.com/k-aranke/dbt-yaml-check) | YAMLで定義されたカラムがSQLにも存在するかどうかをチェックしてくれる。 |
 | [data-diff](https://github.com/datafold/data-diff) | 2つの異なるデータベース間で効率的に行を差分取得するためのコマンドラインツールとPythonライブラリ。 |
 | [dbtc](https://github.com/dpguthrie/dbtc) | dbt Cloudの様々なAPIエンドポイントへの非公式なPythonインターフェース |
