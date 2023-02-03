@@ -32,6 +32,7 @@ written by: [Ken](https://twitter.com/diggy__k)
 ## Doc/Test
 | ツール名 | 概要 |
 | --- | --- |
+| [dbterd](https://github.com/datnguye/dbterd) | manifest.jsonからDBMLファイルを生成するCLI |
 | [dbt-osmosis](https://github.com/z3z1ma/dbt-osmosis) | ４つの機能が含まれているツール。①YAML管理自動化（上流モデルの情報を下流モデルのYAMLに自動伝搬）　②dbt-power-user for VS Codeなどのツールと統合し、IDEからインタラクティブなクエリやリアルタイムコンパイルを可能にするdbtサーバー　③streamlitベースのワークベンチ　④モデルに対し動的に差分実行する |
 | [dbt-coverage](https://github.com/slidoapp/dbt-coverage) | dbt Docsとテストに不足がないかカバー率を算出してくれるCLIツール。 |
 | [tap-dbt-artifacts](https://github.com/prratek/tap-dbt-artifacts) | Meltano SDKでビルドされたdbt Artifacts用のSinger Tap。 |
@@ -49,6 +50,7 @@ written by: [Ken](https://twitter.com/diggy__k)
 ## Transformation
 | ツール名 | 概要 |
 | --- | --- |
+| [turbovault4dbt](https://github.com/ScalefreeCOM/turbovault4dbt) | datavaultのモデルを自動生成するツール。 |
 | [dbt-generator](https://github.com/tuanchris/dbt-generator) | ベースモデルの生成や一括変換を支援してくれる。 |
 | [dbt-coves](https://github.com/datacoves/dbt-coves) | Redshift、Snowflake、BigQueryのスキーマを解析し、必要なファイル（sql、yml）を自動生成してくれる。Airbyteとの連携も。 |
 | [dbt-ml-preprocessing](https://github.com/omnata-labs/dbt-ml-preprocessing) | SparkのmllibやPythonのscikit-learnのような外部ライブラリを使わずに、データウェアハウス内にFeature Storeを構築する。 |
