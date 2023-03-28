@@ -32,6 +32,7 @@ written by: [Ken](https://twitter.com/diggy__k)
 ## Doc/Test
 | ツール名 | 概要 |
 | --- | --- |
+| [dbt-checkpoint](https://github.com/dbt-checkpoint/dbt-checkpoint) | dbtプロジェクトの品質を保証するためのpre-commitフック(git commit した時に意図しない変更がpushされないよう防いでくれる) |
 | [dbterd](https://github.com/datnguye/dbterd) | manifest.jsonからDBMLファイルを生成するCLI |
 | [dbt-osmosis](https://github.com/z3z1ma/dbt-osmosis) | ４つの機能が含まれているツール。①YAML管理自動化（上流モデルの情報を下流モデルのYAMLに自動伝搬）　②dbt-power-user for VS Codeなどのツールと統合し、IDEからインタラクティブなクエリやリアルタイムコンパイルを可能にするdbtサーバー　③streamlitベースのワークベンチ　④モデルに対し動的に差分実行する |
 | [dbt-coverage](https://github.com/slidoapp/dbt-coverage) | dbt Docsとテストに不足がないかカバー率を算出してくれるCLIツール。 |
